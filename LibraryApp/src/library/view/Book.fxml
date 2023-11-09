@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="refresh" prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #d8c71a;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="421.0" layoutY="19.0" text="LIST OF BOOKS" textFill="#da2828">
+         <font>
+            <Font name="System Bold Italic" size="23.0" />
+         </font>
+      </Label>
+      <TableView fx:id="bookTable" layoutX="228.0" layoutY="82.0" onMouseClicked="#tablehandleButtonAction" prefHeight="347.0" prefWidth="564.0">
+        <columns>
+          <TableColumn fx:id="serialNumberColumn" prefWidth="39.0" text="S/No" />
+          <TableColumn fx:id="isbnColumn" minWidth="4.0" prefWidth="76.0" text="ISBN" />
+            <TableColumn fx:id="titleColumn" prefWidth="81.0" text="TITLE" />
+            <TableColumn fx:id="authorColumn" prefWidth="101.0" text="AUTHOR" />
+            <TableColumn fx:id="editionColumn" prefWidth="64.0" text="EDITION" />
+            <TableColumn fx:id="publisherColumn" prefWidth="92.0" text="PUBLISHER" />
+            <TableColumn fx:id="priceColumn" prefWidth="54.0" text="PRICE" />
+            <TableColumn fx:id="qtyColumn" prefWidth="50.0" text="QTY" />
+        </columns>
+      </TableView>
+      <Button fx:id="addButton" layoutX="52.0" layoutY="440.0" mnemonicParsing="false" onAction="#addAction" prefHeight="31.0" prefWidth="166.0" style="-fx-background-color: #1b1ad8;" text="Add" textFill="#16d93f">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="updateButton" layoutX="244.0" layoutY="440.0" mnemonicParsing="false" onAction="#updateAction" prefHeight="30.0" prefWidth="156.0" style="-fx-background-color: #3ee324;" text="Update">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="deleteButton" layoutX="430.0" layoutY="440.0" mnemonicParsing="false" onAction="#deleteAction" prefHeight="30.0" prefWidth="132.0" style="-fx-background-color: #e72d2d;" text="Delete">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <GridPane layoutX="14.0" layoutY="69.0" prefHeight="371.0" prefWidth="213.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="77.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="174.0" minWidth="10.0" prefWidth="128.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="70.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="77.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Title" textFill="#2e15eb" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label text="Author" textFill="#2e15eb" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label prefHeight="29.0" prefWidth="92.0" text="Book ISBN" textFill="#2e15eb">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label text="Edition" textFill="#2e15eb" GridPane.rowIndex="3">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label text="Publisher" textFill="#2e15eb" GridPane.rowIndex="4">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label text="Price" textFill="#2e15eb" GridPane.rowIndex="5">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label text="Quantity" textFill="#2e15eb" GridPane.rowIndex="6">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <TextField fx:id="isbnField" GridPane.columnIndex="1" />
+            <TextField fx:id="titleField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="authorField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="editionField" prefHeight="25.0" prefWidth="106.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="publisherField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="priceField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="qtyField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+      <Label layoutX="52.0" layoutY="24.0" text="ADD BOOK" textFill="#da2828">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font>
+      </Label>
+      <Separator layoutX="224.0" orientation="VERTICAL" prefHeight="429.0" prefWidth="8.0" />
+      <TextField fx:id="searchField" layoutX="670.0" layoutY="53.0" prefHeight="31.0" prefWidth="122.0" promptText="Search By Title">
+         <font>
+            <Font size="15.0" />
+         </font></TextField>
+      <Button fx:id="exportBtn" layoutX="228.0" layoutY="51.0" mnemonicParsing="false" onAction="#exportAsPDFAction" prefHeight="29.0" prefWidth="122.0" style="-fx-background-color: #3ee324;" text="Export  As  PDF">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button layoutX="600.0" layoutY="440.0" mnemonicParsing="false" onAction="#clearAction" prefHeight="31.0" prefWidth="140.0" style="-fx-background-color: yellow;" text="Clear">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LendBookReport" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bd8450c5-5579-4a83-a8ae-7d58aacafa4b">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MYSQL2"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM lendbook]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lendbook"/>
+	</field>
+	<field name="member_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="member_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="member_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lendbook"/>
+	</field>
+	<field name="member_fname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="member_fname"/>
+		<property name="com.jaspersoft.studio.field.label" value="member_fname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lendbook"/>
+	</field>
+	<field name="book_isbn" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="book_isbn"/>
+		<property name="com.jaspersoft.studio.field.label" value="book_isbn"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lendbook"/>
+	</field>
+	<field name="book_title" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="book_title"/>
+		<property name="com.jaspersoft.studio.field.label" value="book_title"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lendbook"/>
+	</field>
+	<field name="issuedate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="issuedate"/>
+		<property name="com.jaspersoft.studio.field.label" value="issuedate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lendbook"/>
+	</field>
+	<field name="returndate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="returndate"/>
+		<property name="com.jaspersoft.studio.field.label" value="returndate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lendbook"/>
+	</field>
+	<group name="id">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+	</group>
+	<group name="member_id">
+		<groupExpression><![CDATA[$F{member_id}]]></groupExpression>
+	</group>
+	<group name="member_fname">
+		<groupExpression><![CDATA[$F{member_fname}]]></groupExpression>
+	</group>
+	<group name="book_isbn">
+		<groupExpression><![CDATA[$F{book_isbn}]]></groupExpression>
+	</group>
+	<group name="book_title">
+		<groupExpression><![CDATA[$F{book_title}]]></groupExpression>
+	</group>
+	<group name="issuedate">
+		<groupExpression><![CDATA[$F{issuedate}]]></groupExpression>
+	</group>
+	<group name="returndate">
+		<groupExpression><![CDATA[$F{returndate}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="97" splitType="Stretch">
+			<staticText>
+				<reportElement x="150" y="10" width="310" height="30" uuid="d275c8bd-ed5f-4d30-9e67-27db75b68d1b"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LIBRARY  APPLICATION  SYSTEM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="50" width="170" height="19" uuid="8247d9e1-67f2-44ba-9958-a29ca7960adb"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ISSUED BOOKS REPORT]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="380" y="74" width="150" height="20" uuid="33d4eb05-da23-4124-af77-5eb2d823ada3"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="96" width="550" height="1" uuid="0504cc1c-9ba7-43eb-8fba-62286e59db9f"/>
+			</line>
+			<image>
+				<reportElement x="80" y="10" width="70" height="70" uuid="a3cdc14a-4369-4093-95e1-84c1cef9b2d6"/>
+				<imageExpression><![CDATA["src\\resources\\book.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="55" splitType="Stretch">
+			<staticText>
+				<reportElement x="310" y="10" width="100" height="20" uuid="f2e20490-593a-47ca-ab7f-c4f1b7aa9c49"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ISSUE DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="10" width="90" height="20" uuid="60380e77-8517-42b3-b67c-99148f0c0a16"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BOOK NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="10" width="100" height="20" uuid="75893153-da4a-42fc-a2dd-34baa595c190"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RETURN DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="130" y="10" width="70" height="20" uuid="c111e789-35b1-49b7-a1c0-bd95cc6930a4"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="10" width="60" height="20" uuid="05d28956-9699-4f6b-a907-64d48002dce2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="10" width="40" height="20" uuid="2a2e8457-8fb0-44bc-878f-5b68656b9f61"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S/No]]></text>
+			</staticText>
+			<line>
+				<reportElement x="4" y="41" width="546" height="1" uuid="b3a1335e-2878-4f2b-9519-0bd72f2bffff"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="130" y="10" width="70" height="30" uuid="d2b001db-6698-470b-8288-f93816ecbc34"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="10" width="90" height="30" uuid="217048ba-47d1-42b3-bdac-10a3952fff91"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{book_title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="10" width="100" height="30" uuid="104dc37c-6709-48be-b8bf-a884b3abd703"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{issuedate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="10" width="100" height="30" uuid="f3833cd6-b0ce-445e-a332-b10f28d15ec2"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{returndate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="10" width="60" height="30" uuid="85af1274-d7b1-4c27-ba82-7037a552e091"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="17" y="10" width="33" height="30" uuid="9c7f3f62-0765-48b7-8ab8-745f520ffb09"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="76" splitType="Stretch">
+			<textField>
+				<reportElement x="420" y="30" width="60" height="30" uuid="f5d50cfc-fcd0-4c12-ab83-41c8f4492b08"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="480" y="30" width="60" height="30" uuid="8c3ef41b-8a9d-4be5-93a8-ce65a11e824c"/>
+				<textElement textAlignment="Left">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="210" y="30" width="170" height="30" uuid="922ec039-67eb-4925-b450-a2652f71e63e"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[softwarecoding8@gmail.com]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="11" width="550" height="1" uuid="32ca6cd4-e917-47ae-855d-70ecdef2ba63"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

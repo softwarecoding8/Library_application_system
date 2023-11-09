@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="OverdueFine" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b715ab09-7fd4-4035-8d19-a1a9e3240064">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MYSQL2"/>
+	<queryString language="SQL">
+		<![CDATA[select *  from returnbook where fine > 0]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="returnbook"/>
+	</field>
+	<field name="member_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="member_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="member_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="returnbook"/>
+	</field>
+	<field name="fname" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="fname"/>
+		<property name="com.jaspersoft.studio.field.label" value="fname"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="returnbook"/>
+	</field>
+	<field name="title" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="title"/>
+		<property name="com.jaspersoft.studio.field.label" value="title"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="returnbook"/>
+	</field>
+	<field name="issuedate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="issuedate"/>
+		<property name="com.jaspersoft.studio.field.label" value="issuedate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="returnbook"/>
+	</field>
+	<field name="reportdate" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.name" value="reportdate"/>
+		<property name="com.jaspersoft.studio.field.label" value="reportdate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="returnbook"/>
+	</field>
+	<field name="elapdays" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="elapdays"/>
+		<property name="com.jaspersoft.studio.field.label" value="elapdays"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="returnbook"/>
+	</field>
+	<field name="fine" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="fine"/>
+		<property name="com.jaspersoft.studio.field.label" value="fine"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="returnbook"/>
+	</field>
+	<field name="paid" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="paid"/>
+		<property name="com.jaspersoft.studio.field.label" value="paid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="returnbook"/>
+	</field>
+	<field name="balance" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="balance"/>
+		<property name="com.jaspersoft.studio.field.label" value="balance"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="returnbook"/>
+	</field>
+	<variable name="total" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{fine}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="111" splitType="Stretch">
+			<staticText>
+				<reportElement x="160" y="20" width="310" height="30" uuid="5b3c775e-2d06-4af6-8bf3-00b64fc691a6"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LIBRARY  APPLICATION  SYSTEM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="50" width="200" height="30" uuid="14e3b628-a09d-47c3-a390-614cb81b95e7"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OVERDUE FINE COLLECTED]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="110" width="550" height="1" uuid="a75c5706-0908-4c1f-86fe-95da86762303"/>
+			</line>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="370" y="90" width="172" height="21" uuid="40ca9559-ea1d-40ed-ac0f-792ea88e626e"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="100" y="20" width="60" height="59" uuid="193e67c4-d8fc-44a4-afb5-59d2d3a7c8fa"/>
+				<imageExpression><![CDATA["src\\resources\\book.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<staticText>
+				<reportElement x="16" y="10" width="44" height="20" uuid="0c3c9d4d-2fb5-4e4d-bc5d-74138b24fbe5"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S/No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="10" width="90" height="20" uuid="ccd12703-0927-4e5b-811b-a4d4e0f5da06"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MEMBER ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="12" width="90" height="18" uuid="fb604040-eda1-436b-81ff-7bf9fef26cee"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIRST NAME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="12" width="90" height="18" uuid="075a8697-e57b-4f5f-98c3-3b940c695b44"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TITLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="10" width="90" height="20" uuid="70d26984-a604-4d88-93c6-4300775a8313"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ELAP DAYS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="10" width="70" height="20" uuid="6318ce91-4e81-402a-8aaa-b72c0605bd5e"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FINE(Ksh)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="30" width="550" height="1" uuid="61bdba4f-4c7c-46e2-b16e-46efe1174b07"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement x="20" y="10" width="40" height="30" uuid="8d446d9d-b388-46dc-a8ca-fbf28019a1d2"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="10" width="90" height="30" uuid="d3740cef-2221-4342-bf3d-00fc3219def9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="10" width="90" height="30" uuid="c763d5ae-bd10-4396-8498-691d38d331e4"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="270" y="10" width="90" height="30" uuid="7a66cf97-fff6-41a1-be02-ebfc860fa5cc"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="10" width="90" height="30" uuid="11ef23e5-a0a5-4c43-a0e5-3cf069745b5c"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{elapdays}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="10" width="70" height="30" uuid="669a36b8-1561-4536-b9a2-7c7025e74cea"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fine}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="376" y="14" width="54" height="23" uuid="209b652e-b6b7-414e-acc3-cb515a9ab182"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="14" width="30" height="23" uuid="f98c3bad-fd5c-45a8-a5a1-fabc293d16df"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ksh]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="460" y="14" width="90" height="23" uuid="a1c2f443-791e-460c-89bf-10fd40930364"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="40" width="550" height="1" uuid="40739105-8820-432e-ae86-b7cfbbbd8a9b"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="193" y="9" width="167" height="30" uuid="70d74910-52ec-46fc-b51e-bd1bd307be03"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[softwarecoding8@gmail.com]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="9" width="70" height="30" uuid="10216f8e-5165-47e4-a62e-10366f4ff60f"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="470" y="9" width="80" height="30" uuid="7ff0f892-f8d2-4cb7-9cb9-034fdaa7349e"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

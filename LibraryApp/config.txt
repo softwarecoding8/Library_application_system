@@ -1,0 +1,1 @@
+{"days_with_no_fine":10,"fine_per_day":50.0}

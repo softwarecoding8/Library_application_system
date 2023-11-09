@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #d8c71a;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.view.OrderController">
+   <children>
+      <Label layoutX="337.0" layoutY="27.0" text="MAKE  ORDER  LIST" textFill="RED">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="77.0" text="ISBN" textFill="#2e15eb" />
+      <TextField fx:id="isbn" layoutX="50.0" layoutY="73.0" onMouseExited="#getDetails" prefHeight="25.0" prefWidth="98.0" />
+      <Label layoutX="148.0" layoutY="77.0" text="Title" textFill="#2e15eb" />
+      <Label layoutX="336.0" layoutY="77.0" text="Quantity" textFill="#2e15eb" />
+      <TextField fx:id="title" editable="false" layoutX="171.0" layoutY="73.0" prefHeight="25.0" prefWidth="82.0" />
+      <TextField fx:id="quantity" layoutX="385.0" layoutY="73.0" onMouseExited="#calculateSubtotal" prefHeight="25.0" prefWidth="51.0" />
+      <Button fx:id="add" layoutX="550.0" layoutY="73.0" mnemonicParsing="false" onAction="#addToOrderListAction" prefHeight="25.0" prefWidth="46.0" style="-fx-background-color: #2196f3" text="Add">
+         <font>
+            <Font size="13.0" />
+         </font></Button>
+      <TableView fx:id="orderTable" layoutX="49.0" layoutY="98.0" onMouseClicked="#tablehandleButtonAction" prefHeight="314.0" prefWidth="721.0">
+        <columns>
+          <TableColumn fx:id="serial_numberColumn" prefWidth="45.0" text="S/No" />
+          <TableColumn fx:id="isbnColumn" prefWidth="144.0" text="ISBN" />
+            <TableColumn fx:id="titleColumn" prefWidth="171.0" text="TITLE" />
+            <TableColumn fx:id="priceColumn" prefWidth="104.0" text="PRICE" />
+            <TableColumn fx:id="quantityColumn" prefWidth="120.0" text="QUANTITY" />
+            <TableColumn fx:id="subtotalColumn" minWidth="3.0" prefWidth="131.0" text="SUBTOTAL" />
+        </columns>
+      </TableView>
+      <Label layoutX="436.0" layoutY="77.0" text="Subtotal" textFill="#2e15eb" />
+      <TextField fx:id="subtotal" editable="false" layoutX="484.0" layoutY="73.0" prefHeight="25.0" prefWidth="66.0" />
+      <Button fx:id="btnPdfExport" layoutX="313.0" layoutY="419.0" mnemonicParsing="false" onAction="#generateOrderListInPDFAction" prefHeight="20.0" prefWidth="196.0" style="-fx-background-color: #3ee324" text="Generate Order List in PDF">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Label layoutX="553.0" layoutY="420.0" prefHeight="29.0" prefWidth="100.0" text="TOTAL =  Ksh " textFill="BLUE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Label>
+      <Label layoutX="253.0" layoutY="77.0" text="Price" textFill="#2e15eb" />
+      <TextField fx:id="price" editable="false" layoutX="283.0" layoutY="73.0" prefHeight="25.0" prefWidth="53.0" />
+      <Button fx:id="update" layoutX="603.0" layoutY="73.0" mnemonicParsing="false" onAction="#updateEvent" style="-fx-background-color: #3ee324;" text="Update" />
+      <Button fx:id="delete" layoutX="668.0" layoutY="73.0" mnemonicParsing="false" onAction="#deleteEvent" style="-fx-background-color: RED" text="Delete" />
+      <Text fx:id="total" fill="RED" layoutX="653.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" underline="true" wrappingWidth="112.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Text>
+      <Button fx:id="clear" layoutX="725.0" layoutY="73.0" mnemonicParsing="false" onAction="#clearAction" style="-fx-background-color: yellow;" text="Clear" />
+   </children>
+</AnchorPane>

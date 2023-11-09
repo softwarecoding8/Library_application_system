@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Receipt" pageWidth="340" pageHeight="396" columnWidth="300" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="95ee5937-b66b-49d2-80bb-6e562e0c2014">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MYSQL2"/>
+	<parameter name="para_id" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="para_isbn" class="java.lang.String" isForPrompting="false"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT *
+FROM lostbook
+WHERE 
+	 lostbook.member_id = $P{para_id} 
+	 AND lostbook.isbn = $P{para_isbn}]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="member_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="member_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="member_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="isbn" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="isbn"/>
+		<property name="com.jaspersoft.studio.field.label" value="isbn"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="title" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="title"/>
+		<property name="com.jaspersoft.studio.field.label" value="title"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="price" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="price"/>
+		<property name="com.jaspersoft.studio.field.label" value="price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="elapdays" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="elapdays"/>
+		<property name="com.jaspersoft.studio.field.label" value="elapdays"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="fine" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="fine"/>
+		<property name="com.jaspersoft.studio.field.label" value="fine"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="paid" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="paid"/>
+		<property name="com.jaspersoft.studio.field.label" value="paid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="balance" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="balance"/>
+		<property name="com.jaspersoft.studio.field.label" value="balance"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="employee_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="employee_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="employee_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="99" splitType="Stretch">
+			<staticText>
+				<reportElement x="55" y="10" width="225" height="20" uuid="e3a04bcb-3d2f-4157-bb04-82e4942405d6"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LIBRARY APPLICATION SYSTEM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="99" y="35" width="100" height="30" uuid="19e751cf-b8cd-48ca-bf15-c23848b3ea1c"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECEIPT]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="10" width="55" height="57" uuid="1e61a3a5-c450-4732-ba28-0869187d2ab0"/>
+				<imageExpression><![CDATA["src\\resources\\book.png"]]></imageExpression>
+			</image>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="190" y="67" width="110" height="23" uuid="1b8cc76c-37d9-4ea3-a794-63591455d640"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="-10" y="4" width="50" height="16" uuid="5059de19-5153-4a9a-90ea-ab38d5ab0ed3"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID NO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="50" y="4" width="60" height="16" uuid="8544c829-c584-494e-97d5-56ca954c48ba"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TITLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="4" width="70" height="16" uuid="c2887ebd-e588-48cc-89a6-05a82d86b8dd"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ELAPDAYS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="4" width="50" height="16" uuid="c57dca0e-3af0-49e1-a6c8-9b61148e3901"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FINE(Ksh)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-10" y="0" width="320" height="1" uuid="bd8feac6-c639-4086-aee3-31eda6e33c83"/>
+			</line>
+			<staticText>
+				<reportElement x="120" y="4" width="50" height="16" uuid="6b7cc718-3e92-4b89-a8a4-6b69313cf7c6"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRICE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="153" splitType="Stretch">
+			<line>
+				<reportElement x="-10" y="0" width="320" height="1" uuid="95e942ab-7a24-4892-ae7d-ee9c3b671252"/>
+			</line>
+			<staticText>
+				<reportElement x="70" y="50" width="110" height="20" uuid="3a7eb574-3a36-41d5-a884-8e52c26fddb6"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Amount Received:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="80" width="60" height="20" uuid="823b3a8f-ae88-4e46-b36d-881d5c5a81e0"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Balance:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="50" width="30" height="20" uuid="258c8915-9754-4198-a337-78925c25aeb8"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ksh]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="80" width="30" height="20" uuid="70bbe46c-f24b-4d65-9d0c-b8724c96a4e8"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ksh]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="10" width="40" height="30" uuid="8d427c0d-2f47-4a6c-8065-46e956096359"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="55" y="10" width="55" height="30" uuid="a506ef23-e83a-45cd-a3a3-92256c5e64b3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="120" y="10" width="50" height="30" uuid="f2fcc6a9-5182-455a-a4bb-fce1a9058db5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="183" y="11" width="67" height="29" uuid="4d7e4fb2-b5f9-4a97-aaf4-5ab15dc95b12"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{elapdays}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="10" width="40" height="30" uuid="3921c57c-3891-432c-9d68-be26a274f22d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fine}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="50" width="79" height="20" uuid="dd10ca63-2900-42d3-ba0f-3a7208983f45"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{paid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="80" width="80" height="20" uuid="31eba6b1-336c-4e76-b1d6-c0bec5bcc7f7"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{balance}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="40" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="-30" width="300" height="1" uuid="15c8ea54-0687-4a68-a85d-f3e4efbf125f"/>
+			</line>
+			<staticText>
+				<reportElement x="55" y="0" width="195" height="20" uuid="9bf5c078-504f-421c-9ecf-56b0ab3ef6cd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[THANK YOU AND WELCOME AGAIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="20" width="170" height="20" uuid="e525210c-cd10-46fb-85c5-ad846246fb68"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[softwarecoding8@gmail.com]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

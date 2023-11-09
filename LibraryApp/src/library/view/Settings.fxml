@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane prefHeight="550.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab closable="false" text="Basic">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #d8c71a;">
+                     <children>
+                        <Button fx:id="save" layoutX="176.0" layoutY="260.0" mnemonicParsing="false" onAction="#handleSaveButtonAction" prefHeight="38.0" prefWidth="186.0" style="-fx-background-color: #3ee324;" text="Save">
+                           <font>
+                              <Font size="18.0" />
+                           </font></Button>
+                        <GridPane layoutX="91.0" layoutY="65.0" prefHeight="173.0" prefWidth="551.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="326.0" minWidth="10.0" prefWidth="326.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="246.0" minWidth="10.0" prefWidth="225.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="93.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="62.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="No Of  Days To Keep Book Without Fine" textFill="#2e15eb">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Fine Per Day" textFill="#2e15eb" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="nDaysWithoutFine" promptText="No of days with no fine" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="finePerDay" promptText="Fine per day" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </GridPane>
+                        <Button layoutX="412.0" layoutY="260.0" mnemonicParsing="false" onAction="#resetAction" prefHeight="39.0" prefWidth="182.0" style="-fx-background-color: yellow;" text="Clear">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="306.0" layoutY="35.0" text="BASIC  SETTINGS" textFill="#da2828">
+                           <font>
+                              <Font name="System Bold Italic" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab closable="false" text="Mail Server">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #d8c71a;">
+                     <children>
+                        <GridPane layoutX="194.0" layoutY="81.0" prefHeight="284.0" prefWidth="468.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="256.0" minWidth="10.0" prefWidth="172.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="0.0" prefWidth="281.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="61.0" minHeight="10.0" prefHeight="61.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="85.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="94.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <TextField fx:id="serverName" prefHeight="37.0" prefWidth="288.0" promptText="server name" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></TextField>
+                              <Label prefHeight="30.0" prefWidth="175.0" text="SMTP Server Name" textFill="#2e15eb">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                              <Label text="SMTP Port" textFill="#2e15eb" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                              <Label text="Email Address" textFill="#2e15eb" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                              <Label text="Email Password" textFill="#2e15eb" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                              <Label text="Enable TLS" textFill="#2e15eb" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></Label>
+                              <TextField fx:id="smtpPort" prefHeight="39.0" prefWidth="288.0" promptText="SMTP port" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></TextField>
+                              <TextField fx:id="emailAddress" prefHeight="39.0" prefWidth="288.0" promptText="Email address" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></TextField>
+                              <PasswordField fx:id="emailPassword" prefHeight="39.0" prefWidth="288.0" promptText="password" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font></PasswordField>
+                              <CheckBox fx:id="sslCheckbox" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font></CheckBox>
+                           </children>
+                        </GridPane>
+                        <Label layoutX="260.0" layoutY="26.0" text="MAIL  SERVER  CONFIGURATIONS" textFill="#da2828">
+                           <font>
+                              <Font name="System Bold Italic" size="20.0" />
+                           </font></Label>
+                        <Button layoutX="191.0" layoutY="384.0" mnemonicParsing="false" onAction="#handleTestMailAction" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: #1b1ad8;" text="Send Test Mail" textFill="#6fd60f">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Button>
+                        <Button layoutX="353.0" layoutY="384.0" mnemonicParsing="false" onAction="#saveMailServerConfiguration" prefHeight="34.0" prefWidth="151.0" style="-fx-background-color: #3ee324;" text="Save">
+                           <font>
+                              <Font size="15.0" />
+                           </font></Button>
+                        <Button layoutX="533.0" layoutY="383.0" mnemonicParsing="false" onAction="#clearAction" prefHeight="33.0" prefWidth="129.0" style="-fx-background-color: yellow;" text="Clear">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Text layoutX="164.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="N/B:Password  Is The Email App 16 Digits Generated Password">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Change Password">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #d8c71a;">
+                     <children>
+                        <Text fill="#da2828" layoutX="287.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CHANGE  PASSWORD">
+                           <font>
+                              <Font name="System Bold Italic" size="20.0" />
+                           </font>
+                        </Text>
+                        <GridPane layoutX="139.0" layoutY="88.0" prefHeight="267.0" prefWidth="522.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="312.0" minWidth="10.0" prefWidth="225.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="271.0" minWidth="10.0" prefWidth="263.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="73.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="65.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Enter Your Registered Email" textFill="#2e15eb">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Old Password" textFill="#2e15eb" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label text="New Password" textFill="#2e15eb" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Confirm Password" textFill="#2e15eb" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="email" onMouseExited="#verifyEmail" promptText="Enter your registered email" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </TextField>
+                              <PasswordField fx:id="old_password" onMouseExited="#verifyOldPassword" promptText="Enter your old password" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </PasswordField>
+                              <PasswordField fx:id="new_password" promptText="Enter your new password" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </PasswordField>
+                              <PasswordField fx:id="confirm_password" promptText="Enter your new password again" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </PasswordField>
+                           </children>
+                        </GridPane>
+                        <Button fx:id="saveButton" layoutX="207.0" layoutY="388.0" mnemonicParsing="false" onAction="#handleChangePasswordAction" prefHeight="32.0" prefWidth="175.0" style="-fx-background-color: #3ee324;" text="Save">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="428.0" layoutY="388.0" mnemonicParsing="false" onAction="#handleClearAction" prefHeight="33.0" prefWidth="169.0" style="-fx-background-color: yellow;" text="Clear">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</StackPane>

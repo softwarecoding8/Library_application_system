@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LostBookFineCollected" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="31df9200-0a73-452d-bc9d-ea1da37bb0f0">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MYSQL2"/>
+	<queryString language="SQL">
+		<![CDATA[select * from lostbook]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="member_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="member_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="member_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="isbn" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="isbn"/>
+		<property name="com.jaspersoft.studio.field.label" value="isbn"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="title" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="title"/>
+		<property name="com.jaspersoft.studio.field.label" value="title"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="price" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="price"/>
+		<property name="com.jaspersoft.studio.field.label" value="price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="elapdays" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="elapdays"/>
+		<property name="com.jaspersoft.studio.field.label" value="elapdays"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="fine" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="fine"/>
+		<property name="com.jaspersoft.studio.field.label" value="fine"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="paid" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="paid"/>
+		<property name="com.jaspersoft.studio.field.label" value="paid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="balance" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="balance"/>
+		<property name="com.jaspersoft.studio.field.label" value="balance"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<field name="employee_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="employee_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="employee_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="lostbook"/>
+	</field>
+	<variable name="total" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{fine}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="91" splitType="Stretch">
+			<staticText>
+				<reportElement x="165" y="10" width="305" height="30" uuid="4b687c05-7951-4990-be39-047097f74d6b"/>
+				<textElement>
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LIBRARY  APPLICATION  SYSTEM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="40" width="223" height="30" uuid="90a7c929-7cc8-4d9b-ac16-a4f0a22bcc33"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LOST BOOKS  FINE COLLECTED]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="90" width="560" height="1" uuid="e3e9d457-4289-4bf5-9877-1c481925ae93"/>
+			</line>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="400" y="70" width="160" height="18" uuid="346bcf3a-bd31-4e64-acd3-e4420349e8f5"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="100" y="10" width="66" height="60" uuid="4a042439-8d0e-4a51-9e55-9328348c03c8"/>
+				<imageExpression><![CDATA["src\\resources\\book.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="44" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="40" height="21" uuid="e014f754-8e9e-450b-958b-80a700efeeef"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S/No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="60" y="10" width="90" height="21" uuid="100f8c94-01cd-4a08-a552-571f62b74e86"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[MEMBER ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="170" y="10" width="120" height="21" uuid="d405077b-eb4d-4887-a918-719f0ad474ab"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BOOK  TITLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="10" width="50" height="25" uuid="336c031e-cd66-4092-b709-ccdd5d1d0eec"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PRICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="10" width="90" height="21" uuid="2f4f77d3-5833-46b5-acd8-2e1b5606ec25"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ELAP DAYS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="10" width="70" height="21" uuid="4f720210-ce2a-481f-bf0a-a7b88285bcbc"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FINE(Ksh)]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="42" width="558" height="1" uuid="0fd615a2-2e12-43b4-a1fe-644a6b9f8e86"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="58" splitType="Stretch">
+			<textField>
+				<reportElement x="10" y="10" width="30" height="40" uuid="e42def19-2530-4dc7-a5ad-03274cae820b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="10" width="90" height="40" uuid="dadc4109-79de-415b-8ddc-0523d19d61bb"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{member_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="10" width="117" height="40" uuid="0bd4de4d-7417-4ba1-9b47-cfd43304ae16"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="310" y="10" width="50" height="40" uuid="2c437fcd-2393-4bd2-a462-61fb75482d06"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="383" y="10" width="87" height="40" uuid="daab8f27-9d46-4e37-8197-3d537425917a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{elapdays}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="490" y="10" width="70" height="40" uuid="fcfab598-ee5d-4673-99c3-613475404995"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fine}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement x="375" y="10" width="55" height="25" uuid="7713956b-d3f8-4d1e-9861-f6f6dca5dc4a"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="460" y="11" width="100" height="24" uuid="08211a50-8bda-48aa-8aa8-6782463c1a99"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{total}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="430" y="11" width="27" height="24" uuid="cb1cbcff-768b-46a9-904a-39438166a0f2"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ksh]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="40" width="558" height="1" uuid="0e9ddbc0-d75b-495f-b0d7-ef4eed0f765a"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="185" y="13" width="175" height="30" uuid="3d0c526f-0541-4a4f-93fa-176d404540bc"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[softwarecoding8@gmail.com]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="400" y="16" width="82" height="24" uuid="39dc1a5d-c6ee-43fb-a563-c9ee50cdc914"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="482" y="16" width="68" height="24" uuid="576009a4-63e3-4bbf-8b32-3a9a9d4aa7ef"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="1" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="rootLayout" prefHeight="550.0" prefWidth="800.0" style="-fx-background-color: #d8c71a;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="library.view.DashboardController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="memView" fitHeight="95.0" fitWidth="96.0" layoutX="571.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/members.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="lendedbksView" fitHeight="90.0" fitWidth="92.0" layoutX="336.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/issued_books.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="bksView" fitHeight="88.0" fitWidth="108.0" layoutX="112.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/books.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="supView" fitHeight="87.0" fitWidth="95.0" layoutX="339.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/supplier.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="fineView" fitHeight="133.0" fitWidth="86.0" layoutX="120.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/fine_collected.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="98.0" layoutY="155.0" text="TOTAL BOOKS =" textFill="BLUE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="322.0" layoutY="155.0" text="LENDED BOOKS=" textFill="BLUE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="88.0" layoutY="314.0" text="TOTAL  FINE=KSh" textFill="BLUE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="326.0" layoutY="314.0" text="SUPPLIERS=" textFill="BLUE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="559.0" layoutY="155.0" text="MEMBERS=" textFill="BLUE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Text fx:id="total_books" fill="RED" layoutX="207.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" underline="true" wrappingWidth="90.13671875">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="lended_books" fill="RED" layoutX="437.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" underline="true" wrappingWidth="93.13671875">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="suppliers" fill="RED" layoutX="408.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" underline="true" wrappingWidth="92.13671875">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="members" fill="RED" layoutX="637.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" underline="true" wrappingWidth="106.13671875">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="total_fine" fill="RED" layoutX="208.0" layoutY="330.0" strokeType="OUTSIDE" strokeWidth="0.0" underline="true" wrappingWidth="111.13671875">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Label layoutX="507.0" layoutY="314.0" text="TOTAL COPIES OF  BOOKS=" textFill="BLUE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Text fx:id="books_copies" fill="RED" layoutX="690.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" underline="true" wrappingWidth="99.13671875">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="bksCopiesView" fitHeight="91.0" fitWidth="135.0" layoutX="548.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/book_copies.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

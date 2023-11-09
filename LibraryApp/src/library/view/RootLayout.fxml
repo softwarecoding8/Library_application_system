@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane fx:id="rootLayout" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #d8c71a;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <Pane prefHeight="33.0" prefWidth="800.0" style="-fx-background-color: #2196f3;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fx:id="footer" layoutX="242.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="footer" wrappingWidth="303.498046875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children></Pane>
+   </bottom>
+   <top>
+      <AnchorPane prefHeight="46.0" prefWidth="801.0" style="-fx-background-color: #3ee324;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="logout" layoutX="698.0" layoutY="6.0" mnemonicParsing="false" onAction="#logoutAction" prefHeight="37.0" prefWidth="103.0" style="-fx-background-color: #3ee324;" text="Logout" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Button>
+            <MenuBar layoutX="6.0" layoutY="34.0" prefHeight="40.0" prefWidth="794.0" style="-fx-background-color: #3ee324;">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#handleSettings" text="Settings" />
+                    <MenuItem mnemonicParsing="false" onAction="#closeApp" text="Close" />
+                  </items>
+                </Menu>
+                  <Menu mnemonicParsing="false" text="Member">
+                    <items>
+                        <MenuItem fx:id="member_overview" mnemonicParsing="false" onAction="#handleMemberOverview" onMenuValidation="#handleMemberOverview" text="Member Overview" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Order">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#handleSupplier" onMenuValidation="#handleSupplier" text="Supplier" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleOrderList" onMenuValidation="#handleOrderList" text="Make Order List" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleSendOrderList" onMenuValidation="#handleSendOrderList" text="Send Order List" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Book">
+                    <items>
+                    	<MenuItem fx:id="book_overview" mnemonicParsing="false" onAction="#handleBookOverview" onMenuValidation="#handleBookOverview" text="Book Overview" />
+                      <MenuItem fx:id="issue" mnemonicParsing="false" onAction="#handleIssue" onMenuValidation="#handleIssue" text="Issue Book" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleReturn" onMenuValidation="#handleReturn" text="Return Book" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleLostBook" onMenuValidation="#handleLostBook" text="Lost Book" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Report">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleBooks" text=" Books Available" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleRegisteredMembers" text=" Registered Members" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleIssuedBooks" text=" Issued Books" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleOverdueFineCollected" text=" Overdue Fine Collected" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleLostBookFineCollected" text=" Lost Books Fine Collected" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Notify">
+                    <items>
+                           <MenuItem mnemonicParsing="false" onAction="#handleNotification" text="Overdue Notification" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Statistics">
+                    <items>
+                      <MenuItem fx:id="show_Statistics" mnemonicParsing="false" onAction="#handleIssuedBookStatistics" text="Show  Issued Books Statistics" />
+                      
+                    </items>
+                  </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Button fx:id="dashboard" layoutX="15.0" layoutY="4.0" mnemonicParsing="false" onAction="#loadDashboard" prefHeight="20.0" prefWidth="76.0" style="-fx-background-color: #3ee324;" text="Dashboard" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>
