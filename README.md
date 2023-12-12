@@ -41,15 +41,16 @@ It is  developed using JavaFX programming language.
 # Setup
 
 1.	Download the project source code.
-1.	Create SQL database named "library".
+1.	To eliminate SQL error, cut the database folder and paste it to where accessible in your computer system.
+1.	Create an SQL database named "library".
 1.	Import the library.sql file to the database.
 1.	Import the source code project to the IDE. (I used Eclipse to develop this project.)
 1.	Import the Jar library files to the project build path.
-1.	Go to the market place in Eclipse. Install Jaspersoft Studio ,e(fx)clipse library.
-1.	Run the project. (If the project failed to run, check  JavaFX and JDK configuration, and ensure that all Jar library files are imported to the project build path).
-1.	Configure Basic settings and Mail Server information under settings in File menu.
-1.	 If Database connection is not establish, check the configuration
-1.	Now, you're good to go!!! Modify it for your own usecase.
+1.	Go to the marketplace in Eclipse. Install Jaspersoft Studio,e(fx)clipse library.
+1.	Run the project. (If the project fails to run, check  JavaFX and JDK configuration, and ensure that all Jar library files are imported to the project build path).
+1.	Configure Basic settings and Mail Server information under settings in the File menu.
+1.	 If the Database connection is not established, check the configuration
+1.	Now, you're good to go!!! Modify it for your own use-case.
 
 ## Default Login Credentials
 
